@@ -12,7 +12,6 @@ id-token: write
 
 jobs:
 build:
-name: Build proyecto SvelteKit
 runs-on: ubuntu-latest
 
 ```
@@ -31,14 +30,13 @@ steps:
   - name: Construir proyecto
     run: npm run build
 
-  - name: Subir artefacto (build)
+  - name: Subir artefacto
     uses: actions/upload-pages-artifact@v3
     with:
       path: ./build
 ```
 
 deploy:
-name: Deploy a GitHub Pages
 needs: build
 runs-on: ubuntu-latest
 
